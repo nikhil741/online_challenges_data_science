@@ -1,0 +1,34 @@
+HOW TO RUN THE MODEL:-
+    1. Run file feautre_extraction.py file it will generate train and test file with attributes in output folder.
+    
+    2. Run generate_submission_file.py file takes files from output and generates submission.csv file in output directory.
+
+    
+Note:-
+    1. All path varibles are from source Project Folder.
+    2. Test data also need to be processed to maintain consistency between training data and test data.
+    3. Model is present in generate_submission_file.py which automatically generates the submission.csv file.
+    
+
+FOLDER STRUCTURE:
+    
+    Mekkotrnix Sales
+        
+        dataset
+            holidays.xlsx
+            promotional_expense.csv
+            sample_submission.csv
+            yds_test2018.csv
+            yds_train2018.csv
+        
+        output
+            yds_submission2018.csv
+            test.csv
+            train.csv
+        
+        src
+            feature_extractor.py
+            generate_submission_file.py
+        
+        Approach.txt
+        README.txt

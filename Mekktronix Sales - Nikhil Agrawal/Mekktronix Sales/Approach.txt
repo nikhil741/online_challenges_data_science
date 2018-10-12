@@ -1,0 +1,37 @@
+Approach:
+    1. As prediciton needs to be done for the month so the value of weeks are summed up.
+    2. New feautre Monthly_expense from promotional_expense.csv file is extracted and respectively copied to desired row.
+    3. New feature Holidays representing the number of holdiays in country monthly calculated and added.
+    4. Handle Na values.
+    5. Train Random Forest Model.
+    6. Predict
+
+
+Feautres:(train.csv file)
+   Year  Month  Product_ID  Country  Expense_Price  Holidays  Sales
+ 
+1) No Potential errors.
+
+2) Data PreProcessig:-
+	1. Convert Sales from weekly to monthly in yds_train2018.csv. 
+	2. Add Expense_price as column(feature) from promotional_expense.csv file.
+	3. Add Holidays as column(feature) from holidays.xlsx file.
+	4. Country treated as dummy variable need to encoded in numerical variables and then onehotencode it.
+	5. Na values in Holidays replaced with most frequent holidays value.
+	6. Na values in expense_price replaced with mean value. 
+
+3) Key obserbations/ Trends:-
+	1. Month having 2 holidays sales price is high for it.
+	2. Expense price in around 10,000 seems beneficial for rising sale value.
+
+
+4) Model Choice Explanation:
+	1. Non-linear models are expected to work better than linear models. As the Predicted value depends upon several parameters like country, product_id, year, marketing value spent and there isn't linear relation between feature values.
+
+	2. Choose Random Forest as in regression task can't rely on single regression model solely. Performance increases as number of model increases. Since random forest takes average of all model predicted value Expected SMAPE should decrease.
+
+5) Expected error for submission file:
+	
+
+6) Top 5 most significant variable in model
+	Product_ID  Country  Expense_Price  Year  Holidays
